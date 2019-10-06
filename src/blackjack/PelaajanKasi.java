@@ -14,13 +14,13 @@ public class PelaajanKasi {
         this.kortit.add(kortti);
     }
 
-    public int selvitaSumma() {
+    public int selvitaSumma() { //selvitetään kädessä olevien korttien arvo
         int summa = 0;
         for (int i = 0; i < this.kortit.size(); i++) {
             Kortti kortti = this.kortit.get(i);
             summa += kortti.getArvo();
         }
-        if (summa > 21 && this.kortit.size() == 2) {
+        if (summa > 21 && this.kortit.size() == 2) { //jos menee yli 21, vähentää summasta 10 ja muuttaa toisen ässän arvon numeroksi 1
             summa -= 10;
             String maa1 = this.kortit.get(0).getMaa();
             String maa2 = this.kortit.get(1).getMaa();
@@ -32,7 +32,7 @@ public class PelaajanKasi {
         }
         return summa;
         }
-        public boolean onkoBlackjack(){
+        public boolean onkoBlackjack(){ //tarkistaa onko pelaajan käsi blackjack
             if(this.kortit.size() > 2){
                 return false;
             }

@@ -17,19 +17,19 @@ public class Blackjack {
         
         //pelin aloitus ja pelaajan vuoro
         pakka.sekoitaPakka();
-
+        //jakaa pelaajalle kaksi korttia
         kasi.otaKortti(pakka.jaaKortti());
         kasi.otaKortti(pakka.jaaKortti());
-        
+        //selvittää kädessä olevien korttien summan
         int summa = kasi.selvitaSumma();
 
         System.out.println("Korttien summa on " + summa);
-        
+        //tarkistaa onko kahden ensimmäisen kortin tulos blackjack
         if(kasi.onkoBlackjack()) {
             System.out.println("Blackjack saavutettu!");
             return;
         }
-
+        //kysyy pelaajalta haluaako hän lisää kortteja, jos summa on alle 21
         while (summa < 21) {
             System.out.println("Haluatko lisäkortin? (k/e)");
             String vastaus = lukija.nextLine();

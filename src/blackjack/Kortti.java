@@ -32,7 +32,7 @@ public class Kortti {
     
     //toString metodi
     public String toString() {
-        return "Arvo:"+this.arvo+ " Maa: "+this.maa;
+        return "Arvo: "+this.arvo+ " Maa: "+this.maa;
     }
     
 }

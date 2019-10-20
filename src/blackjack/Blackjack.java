@@ -23,6 +23,7 @@ public class Blackjack {
         //selvittää kädessä olevien korttien summan
         int summa = kasi.selvitaSumma();
 
+        System.out.println(kasi);
         System.out.println("Korttien summa on " + summa);
         //tarkistaa onko kahden ensimmäisen kortin tulos blackjack
         if(kasi.onkoBlackjack()) {
@@ -41,6 +42,7 @@ public class Blackjack {
             }
             
             summa = kasi.selvitaSumma();
+            System.out.println(kasi);
             System.out.println("Korttien summa on: " + summa);
         }
         
@@ -72,6 +74,7 @@ public class Blackjack {
             System.out.println("Tasapeli!");
         }
         
+        System.out.println(kasi);
         System.out.println("Pelaajan korttien summa on: " + summa);
         System.out.println("Jakajan korttien summa on " + jakajanSumma);
     }

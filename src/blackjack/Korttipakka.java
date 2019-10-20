@@ -21,18 +21,20 @@ public class Korttipakka {
     }
     private void luoMaa(String maa){
         for(int i=1; i < 14; i++){ //korttinumeroiden luonti ja ehdot kuvakortille ja ässälle
-            if(i > 9){ //asettaa kaikkien kuvakorttien arvoksi 10
-                Kortti kuvakortti = new Kortti(10, maa);
-                this.pakka.add(kuvakortti);
-            }
-            if(i == 1){ // asettaa ässän arvoksi 11
-                Kortti assa = new Kortti(11, maa);
-                this.pakka.add(assa);
-            }
-            if (i > 1 && i < 10){ // antaa numerokorttien arvot järjestyksessä
-                Kortti numerokortti = new Kortti(i, maa);
-                this.pakka.add(numerokortti);
-            }
+            Kortti numerokortti = new Kortti(i, maa);
+            this.pakka.add(numerokortti);
+//            if(i > 9){ //asettaa kaikkien kuvakorttien arvoksi 10
+//                Kortti kuvakortti = new Kortti(10, maa);
+//                this.pakka.add(kuvakortti);
+//            }
+//            if(i == 1){ // asettaa ässän arvoksi 11
+//                Kortti assa = new Kortti(11, maa);
+//                this.pakka.add(assa);
+//            }
+//            if (i > 1 && i < 10){ // antaa numerokorttien arvot järjestyksessä
+//                Kortti numerokortti = new Kortti(i, maa);
+//                this.pakka.add(numerokortti);
+//            }
         }
     }
     

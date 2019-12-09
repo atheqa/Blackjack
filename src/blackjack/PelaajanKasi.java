@@ -21,11 +21,9 @@ public class PelaajanKasi {
         for (int i = 0; i < this.kortit.size(); i++) {
             if(this.kortit.get(i).getArvo() > 9){ //asettaa kaikkien kuvakorttien arvoksi 10
                 summa += 10;
-            }
-            if(this.kortit.get(i).getArvo() == 1){ // asettaa ässän arvoksi 11
+            } else if(this.kortit.get(i).getArvo() == 1){ // asettaa ässän arvoksi 11
                 summa += 11;
-            }
-            if (this.kortit.get(i).getArvo() > 1 && this.kortit.get(i).getArvo() < 10){ // antaa numerokorttien arvot järjestyksessä
+            } else if (this.kortit.get(i).getArvo() > 1 && this.kortit.get(i).getArvo() < 10){ // antaa numerokorttien arvot järjestyksessä
                 summa += this.kortit.get(i).getArvo();
             }
         }
@@ -64,6 +62,10 @@ public class PelaajanKasi {
             return true;
         }
         return false;
+    }
+    
+    public int size() {
+        return this.kortit.size();
     }
     
     public String toString() {

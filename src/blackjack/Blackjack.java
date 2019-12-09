@@ -17,9 +17,14 @@ public class Blackjack {
         
         //pelin aloitus ja pelaajan vuoro
         pakka.sekoitaPakka();
+        
         //jakaa pelaajalle kaksi korttia
-        kasi.otaKortti(pakka.jaaKortti());
-        kasi.otaKortti(pakka.jaaKortti());
+        System.out.println("===== PELAAJAN VUORO =====");
+        //kasi.otaKortti(pakka.jaaKortti());
+        //kasi.otaKortti(pakka.jaaKortti());
+        kasi.otaKortti(new Kortti(8, "pata"));      // TESTAUKSEEN, muuta arvo ja maa
+        kasi.otaKortti(new Kortti(8, "ruutu"));     // TESTAUKSEEN, muuta arvo ja maa
+        
         //selvittää kädessä olevien korttien summan
         int summa = kasi.selvitaSumma();
 
@@ -52,15 +57,24 @@ public class Blackjack {
         }
 
         //jakajan vuoro
-        jakaja.otaKortti(pakka.jaaKortti());
-        jakaja.otaKortti(pakka.jaaKortti());
+        System.out.println("\n===== JAKAJA VUORO =====");
+        //Kortti aloitusKortti1 = pakka.jaaKortti();
+        //Kortti aloitusKortti2 = pakka.jaaKortti();
+        jakaja.otaKortti(new Kortti(3, "pata"));            // TESTAUKSEEN, muuta arvo ja maa
+        jakaja.otaKortti(new Kortti(3, "ruutu"));           // TESTAUKSEEN, muuta arvo ja maa
+        
         int jakajanSumma = jakaja.selvitaSumma();
+        System.out.println("Jakajan Käsi: " + jakajanSumma);
         
         while (jakajanSumma < 15){
             jakaja.otaKortti(pakka.jaaKortti());
-            jakajanSumma += jakaja.selvitaSumma();
+            jakajanSumma = jakaja.selvitaSumma();
+            System.out.println("Jakaja Käsi: " + jakajanSumma);
         }
         
+        System.out.println("Jakajan kortteja on: " + jakaja.size());
+        
+        System.out.println("\n===== LOPPUTULOS =====");
         if(jakajanSumma > 21) {
             System.out.println("Jakaja hävisi!");
             return;
@@ -74,7 +88,13 @@ public class Blackjack {
             System.out.println("Tasapeli!");
         }
         
+        System.out.println("\n===== PELAAJAN KÄSI =====");
         System.out.println(kasi);
+        
+        System.out.println("===== JAKAJAN KÄSI =====");
+        System.out.println(jakaja);
+        
+        System.out.println("===== KÄSIEN SUMMAT =====");
         System.out.println("Pelaajan korttien summa on: " + summa);
         System.out.println("Jakajan korttien summa on " + jakajanSumma);
     }
